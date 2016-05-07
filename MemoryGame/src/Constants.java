@@ -9,7 +9,7 @@ public interface Constants{
    int PORT = 1181;
    
    // change this value will increase the number of players to play the game
-   int NUM_OF_PLAYERS_TO_START = 3;
+   int NUM_OF_PLAYERS_TO_START = 2;
    
    int NUM_OF_CARDS = 12;
 }

@@ -1,7 +1,5 @@
 import javax.swing.*;
-import java.awt.*;
 import java.util.*;
-import java.awt.event.*;
 import java.io.IOException;
 import java.net.*;
 import java.io.InputStream;
@@ -29,12 +27,18 @@ public class Client implements Constants{
          final String HOST = "-host";
          final String IMAGE = "-img";
          final String HELP = "-help";
+         
+         // These two variables hold the host(= IP) and path for image (in the local computer)
          String host = "";
          String imagePath = "";
+         
          boolean isWrongInput = false;
          // check command-line arguments and assign variables according to the input
          for(int i=0; i<args.length; i++){
             try{
+            	if(args.length == 0){
+            		throw new IndexOutOfBoundsException();
+               }
                if(HOST.equals(args[i])){
                   i++;
                   try{

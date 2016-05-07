@@ -3,8 +3,6 @@ import java.awt.*;
 import java.util.*;
 import java.awt.event.*;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.net.Socket;
 import java.io.PrintWriter;
 
@@ -20,12 +18,11 @@ import java.io.PrintWriter;
    @version 1.1
 */
 public class MemoryGUI extends JFrame implements ActionListener{
-   private final int WIDTH = 670;
-   private final int HEIGHT = 560;
+   private static final long serialVersionUID = 1L;
    private final int NUM_OF_BUTTONS = 12;
    // These Strings refer to the name of image files used in this program
-   private final String[] ICONS = {"back.png", "1.jpg", "2.jpg"
-      , "3.jpg", "4.jpg", "5.jpg", "6.jpg"};
+   private final String[] ICONS = {"src/img/back.jpg", "src/img/1.jpg", "src/img/2.jpg"
+      , "src/img/3.jpg", "src/img/4.jpg", "src/img/5.jpg", "src/img/6.jpg"};
    
    // instance variables for GUI
    private JButton[] buttons;
@@ -76,11 +73,20 @@ public class MemoryGUI extends JFrame implements ActionListener{
       JPanel panel2 = new JPanel();
       panel2.setLayout(new GridLayout(1, 3));
       startButton = new JButton("Start the Game");
+      //startButton.setContentAreaFilled(false);//---------
+      //startButton.setOpaque(true);//---------
       startButton.setBackground(Color.blue);
       quitButton = new JButton("Quit the Game");
+      //quitButton.setContentAreaFilled(false);//---------
+      //quitButton.setOpaque(true);//---------
       quitButton.setBackground(Color.red);
       text = new JTextArea(1, 1);
-      text.setBackground(Color.green);
+      text.setBackground(Color.gray);
+      
+      //System.out.println(startButton.isOpaque());//---------
+      //System.out.println(quitButton.isOpaque());//---------
+      //System.out.println(text.isOpaque());//---------
+      
       panel2.add(startButton);
       panel2.add(text);
       panel2.add(quitButton);
