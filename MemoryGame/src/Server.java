@@ -52,6 +52,7 @@ public class Server implements Constants{
          out.println(playerName);
          out.flush();
          
+         ///// possibly, might have a big problem OUT OF SCOPE ////////
          if(numOfPlayer >= NUM_OF_PLAYERS_TO_START){
             // reset numOfPlayer
             numOfPlayer = 0;
